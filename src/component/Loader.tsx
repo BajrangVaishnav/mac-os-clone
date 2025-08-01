@@ -1,12 +1,4 @@
-// const Loader = () => {
-//   return (
-//     <div>
-//       <CutoutTextLoader
-       
-//       />
-//     </div>
-//   );
-// };
+
 
 const Loader = ({
   height,

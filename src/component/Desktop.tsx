@@ -1,17 +1,25 @@
-import bgImg1 from "../assets/images/bgImg1.png";
-import bgImg2 from "../assets/images/bgImg2.jpg";
-import bgImg3 from "../assets/images/bgImg3.jpg";
-import bgImg4 from "../assets/images/bgImg4.jpg";
-import bgImg5 from "../assets/images/bgImg5.jpg";
-import bgImg6 from "../assets/images/bgImg6.jpg";
-import { ModalProvider } from "./ModalContext";
-import Header from "./Header";
-import Dock from "./Dock";
-import React, { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
-import { IoMdArrowDropup } from "react-icons/io";
-import { IoSearchOutline } from "react-icons/io5";
-import { RxCross2 } from "react-icons/rx";
+import 'leaflet/dist/leaflet.css';
+
+import React, {
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
+import { RiTwitterXFill } from "react-icons/ri";
+import L from 'leaflet';
+import iconUrl from 'leaflet/dist/images/marker-icon.png';
+import iconShadow from 'leaflet/dist/images/marker-shadow.png';
+import {
+  AnimatePresence,
+  motion,
+} from 'motion/react';
+// import { useNavigate } from "react-router-dom";
+import { BiChevronRight } from 'react-icons/bi';
+import { BsSearch } from 'react-icons/bs';
+import {
+  FaGithub,
+  FaInstagram,
+} from 'react-icons/fa';
 import {
   FiChevronLeft,
   FiChevronRight,
@@ -30,23 +38,41 @@ import {
   FiShare2,
   FiStar,
   FiTag,
-  FiTrash2
-} from "react-icons/fi";
-import { TfiArrowsCorner } from "react-icons/tfi";
-// import { useNavigate } from "react-router-dom";
-import { BiChevronRight } from "react-icons/bi";
-import { GoFileDirectoryFill } from "react-icons/go";
-import { LuFiles } from "react-icons/lu";
-import { BsSearch } from "react-icons/bs";
-import { VscDebugAlt, VscExtensions, VscSourceControl } from "react-icons/vsc";
+  FiTrash2,
+} from 'react-icons/fi';
+import { GoFileDirectoryFill } from 'react-icons/go';
+import { HiExternalLink } from 'react-icons/hi';
+import { IoMdArrowDropup } from 'react-icons/io';
+import { IoSearchOutline } from 'react-icons/io5';
+import { LuFiles } from 'react-icons/lu';
+import {
+  MdOutlineEmail,
+  MdScreenRotation,
+} from 'react-icons/md';
 
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import L from "leaflet";
-import "leaflet/dist/leaflet.css";
-import iconUrl from "leaflet/dist/images/marker-icon.png";
-import iconShadow from "leaflet/dist/images/marker-shadow.png";
-import { HiExternalLink } from "react-icons/hi";
-import { MdScreenRotation } from "react-icons/md";
+import { RxCross2 } from 'react-icons/rx';
+import { TfiArrowsCorner } from 'react-icons/tfi';
+import {
+  VscDebugAlt,
+  VscExtensions,
+  VscSourceControl,
+} from 'react-icons/vsc';
+import {
+  MapContainer,
+  Marker,
+  Popup,
+  TileLayer,
+} from 'react-leaflet';
+
+import bgImg1 from '../assets/images/bgImg1.png';
+import bgImg2 from '../assets/images/bgImg2.jpg';
+import bgImg3 from '../assets/images/bgImg3.jpg';
+import bgImg4 from '../assets/images/bgImg4.jpg';
+import bgImg5 from '../assets/images/bgImg5.jpg';
+import bgImg6 from '../assets/images/bgImg6.jpg';
+import Dock from './Dock';
+import Header from './Header';
+import { ModalProvider } from './ModalContext';
 
 const DefaultIcon = L.icon({
   iconUrl,
@@ -58,7 +84,7 @@ L.Marker.prototype.options.icon = DefaultIcon;
 const bgImages = [bgImg1, bgImg2, bgImg3, bgImg4, bgImg5, bgImg6];
 const Desktop = () => {
   // const navigate = useNavigate();
-  const [bg, setBg] = useState(0);
+  const [bg, setBg] = useState(Math.floor(Math.random() * 6));
   const [id, setId] = useState<string>("");
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [visible, setVisible] = useState(false);
@@ -725,6 +751,118 @@ const Desktop = () => {
                       )}
                     </AnimatePresence>
                   </motion.div>
+                )}
+
+                {isModalOpen && id === "admin" && (
+                  <motion.div
+                    key="modal"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm"
+                  >
+                    <motion.div
+                      initial={{ scale: 0.95, y: -30 }}
+                      animate={{ scale: 1, y: 0 }}
+                      exit={{ scale: 0.9, y: -20 }}
+                      transition={{ duration: 0.4, type: "spring", stiffness: 120 }}
+                      onClick={(e) => e.stopPropagation()}
+                      className="relative w-full max-w-md md:max-w-xl bg-white/10 border border-white/20 rounded-2xl shadow-2xl p-6 text-white overflow-hidden"
+                    >
+                      {/* macOS Top Buttons */}
+                      <div className="absolute top-4 left-4 flex space-x-2">
+                        <span className="w-3 h-3 bg-red-500 rounded-full"></span>
+                        <span className="w-3 h-3 bg-yellow-400 rounded-full"></span>
+                        <span className="w-3 h-3 bg-green-500 rounded-full"></span>
+                      </div>
+
+                      {/* Profile Content */}
+                      <div className="flex flex-col items-center text-center mt-10">
+                        <img
+                          src="https://avatars.githubusercontent.com/u/000000?v=4" // 🔁 Replace with your image
+                          alt="Bajrang Vaishnav"
+                          className="w-24 h-24 rounded-full border-4 border-white/30 shadow-lg hover:scale-105 transition duration-300"
+                        />
+
+                        <h2 className="text-2xl font-bold mt-4">Bajrang Vaishnav</h2>
+                        <p className="text-sm text-gray-300 mt-1">
+                          Full Stack Dev | React ⚛️ | Laravel 🚀 | Open Source ❤️
+                        </p>
+
+                        <p className="text-xs text-gray-300 mt-3 px-3">
+                          👋 Hi! I'm Bajrang from India 🇮🇳. Passionate about building web and mobile apps that are clean, fast and scalable.
+                        </p>
+
+                        <div className="mt-4 text-sm text-gray-100">
+                          <span className="font-semibold">Tech Stack:</span>
+                          <div className="flex flex-wrap justify-center gap-2 mt-2 text-xs">
+                            <span className="bg-white/20 px-2 py-1 rounded-full">React</span>
+                            <span className="bg-white/20 px-2 py-1 rounded-full">Laravel</span>
+                            <span className="bg-white/20 px-2 py-1 rounded-full">TailwindCSS</span>
+                            <span className="bg-white/20 px-2 py-1 rounded-full">Node.js</span>
+                            <span className="bg-white/20 px-2 py-1 rounded-full">MongoDB</span>
+                          </div>
+                        </div>
+
+                        <div className="flex justify-center gap-5 mt-5 text-2xl p-4">
+                          <a
+                            href="https://github.com/BajrangVaishnav"
+                            target="_blank"
+                            
+                          >
+                            <FaGithub className="hover:text-gray-300 transition hover:scale-110"/>
+                          </a>
+                          <a
+                            href="https://www.instagram.com/bajrang.vaishnav/"
+                            target="_blank"
+                            
+                          >
+                            <FaInstagram className="hover:text-pink-500 hover:bg-white rounded  transition hover:scale-110"/>
+                          </a>
+                          <a
+                            href="https://x.com/BajrangVaisnnav?t=DrcPx0yh0-wCRbxJUndTEw&s=09"
+                            target="_blank"
+                            
+                          >
+                            <RiTwitterXFill className="hover:text-white hover:bg-black rounded transition hover:scale-110"/>
+                          </a>
+                          <a
+                            href="mailto:bxj@outlook.in"
+                            
+                          >
+                            <MdOutlineEmail className="hover:text-red-400 hover:bg-white rounded transition hover:scale-110"/>
+                          </a>
+                        </div>
+
+                        <div className="mt-5 text-xs text-gray-400 flex flex-col items-center">
+                          {/* <p>📈 GitHub Stats: 25+ Public Repos, 80+ Contributions</p> */}
+                          <p>Click hear to check my portfolio -</p>
+                          <p>
+                            {/* ⭐ Fav Project:{" "} */}
+                            <a
+                              href="https://webpack-react-portfolio.vercel.app/"
+                              target="_blank"
+                              className="underline text-blue-300"
+                            >
+                              MyPortfolio
+                            </a>
+                          </p>
+                        </div>
+
+                        <motion.button
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          onClick={() => setIsModalOpen(false)}
+                          className="mt-6 px-4 py-2 text-sm bg-white/20 hover:bg-white/30 backdrop-blur rounded-xl transition-all"
+                        >
+                          Close
+                        </motion.button>
+                      </div>
+                    </motion.div>
+                  </motion.div>
+
+
                 )}
 
                 {isModalOpen && id === "date" && (

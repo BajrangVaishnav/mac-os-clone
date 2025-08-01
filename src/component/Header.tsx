@@ -1,11 +1,16 @@
-import { FaApple } from "react-icons/fa";
-import { IoSearchOutline } from "react-icons/io5";
+import {
+  useEffect,
+  useState,
+} from 'react';
 
-import { useEffect, useState } from "react";
-import { HiOutlineLogout } from "react-icons/hi";
-import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
-import { RiAdminLine } from "react-icons/ri";
+import {
+  FaApple,
+  FaRegUser,
+} from 'react-icons/fa';
+import { HiOutlineLogout } from 'react-icons/hi';
+import { IoSearchOutline } from 'react-icons/io5';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 interface HeaderProps {
   openModal: () => void;
@@ -195,10 +200,13 @@ const Header = ({ openModal, id }: HeaderProps) => {
           </span>
           {admin ? (
             <span
-              onClick={() => navigate("/admin")}
+             onClick={() => {
+              id("admin");
+              openModal();
+            }}
               className="text-sm cursor-pointer"
             >
-              <RiAdminLine />
+              <FaRegUser />
             </span>
           ) : null}
 
