@@ -1,0 +1,30 @@
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1200 1200" enable-background="new 0 0 1200 1200" xml:space="preserve">
+<g>
+	
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-50.8221" y1="1253.4608" x2="825.9591" y2="1253.4608" gradientTransform="matrix(0.7071 -0.7071 -0.7071 -0.7071 993.6604 1553.7937)">
+		<stop offset="0" style="stop-color:#FF0080"></stop>
+		<stop offset="1" style="stop-color:#FFFFFF"></stop>
+	</linearGradient>
+	<path fill="url(#SVGID_1_)" d="M71.393,703.4L71.393,703.4c28.524,28.524,74.771,28.524,103.295,0l516.683-516.683
+		c28.524-28.524,28.524-74.771,0-103.295l0,0c-28.524-28.524-74.771-28.524-103.295,0L71.393,600.105
+		C42.869,628.629,42.869,674.876,71.393,703.4z"></path>
+	
+		<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="763.5104" y1="961.2993" x2="1276.9285" y2="961.2993" gradientTransform="matrix(-0.7071 0.7071 -0.7071 -0.7071 1890.9033 656.5508)">
+		<stop offset="0" style="stop-color:#FFFFFF"></stop>
+		<stop offset="1" style="stop-color:#FF0080"></stop>
+	</linearGradient>
+	<path fill="url(#SVGID_2_)" d="M671.279,516.693L671.279,516.693c28.524,28.524,28.524,74.771,0,103.295L411.532,879.734
+		c-28.524,28.524-74.771,28.524-103.295,0l0,0c-28.524-28.524-28.524-74.771,0-103.295l259.747-259.747
+		C596.508,488.169,642.755,488.169,671.279,516.693z"></path>
+	<path fill="#FFFFFF" d="M844.643,329.827L844.643,329.827c-28.524-28.524-74.771-28.524-103.294,0l0,0
+		c-28.524,28.524-28.524,74.77,0,103.294l0,0c28.524,28.524,74.77,28.524,103.294,0l0,0
+		C873.167,404.597,873.167,358.351,844.643,329.827z"></path>
+	
+		<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="408.9123" y1="669.1377" x2="1276.9286" y2="669.1377" gradientTransform="matrix(-0.7071 0.7071 -0.7071 -0.7071 1890.9033 656.5508)">
+		<stop offset="0" style="stop-color:#26C2FF"></stop>
+		<stop offset="1" style="stop-color:#FFFFFF"></stop>
+	</linearGradient>
+	<path fill="url(#SVGID_3_)" d="M1128.607,472.544L1128.607,472.544c28.524,28.524,28.524,74.771,0,103.295l-562.133,562.133
+		l-103.295-103.295l562.133-562.133C1053.836,444.02,1100.083,444.02,1128.607,472.544z"></path>
+</g>
+</svg>
