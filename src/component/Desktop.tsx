@@ -814,7 +814,7 @@ const Desktop = () => {
                             <FaGithub className="hover:text-gray-300 transition hover:scale-110"/>
                           </a>
                           <a
-                            href="https://www.instagram.com/bajrang.vaishnav/"
+                            href="https://www.instagram.com/dev.bjv/"
                             target="_blank"
                             
                           >

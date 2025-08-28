@@ -1,54 +1,58 @@
-# React + TypeScript + Vite
+# macOS Clone – React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a **macOS UI clone** built using **React, TypeScript, and Vite**.  
+It replicates the look and feel of macOS with smooth UI and fast performance.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
+- ⚡ Built with **Vite** for super-fast development
+- 📦 **React + TypeScript** for scalability
+- 🎨 macOS-style UI components
+- 🖥️ Responsive and lightweight
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Installation & Setup
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### 1. Clone the repository
+```bash
+git clone https://github.com/your-username/macos-clone.git
+cd macos-clone
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Install dependencies
+```bash
+npm install
+```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 3. Run the development server
+```bash
+npm run dev
+```
+```base
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+📂 Project Structure
+php
+Copy
+Edit
+macos-clone/
+│── src/        # React + TypeScript source code
+│── public/     # Static assets
+│── index.html  # Entry point
+│── vite.config.ts
+│── tsconfig.json
+│── package.json
+🖼️ Preview
+Add a screenshot or GIF of your macOS clone here
+
+📜 License
+This project is licensed under the MIT License – feel free to use and modify it.
+
+🤝 Contributing
+Pull requests are welcome! If you’d like to contribute, please fork the repo and submit a PR.
+
+pgsql
+
+👉 Do you also want me to add **Mac-style screenshots/GIF placeholders** in the README so it looks more professional?
 ```
