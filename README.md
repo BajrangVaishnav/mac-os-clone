@@ -45,7 +45,7 @@ macos-clone/
 Add a screenshot or GIF of your macOS clone here
 
 ✨For live preview
-[Link Text](https://osclone-omega.vercel.app/)
+https://osclone-omega.vercel.app/
 🤝 Contributing
 Pull requests are welcome! If you’d like to contribute, please fork the repo and submit a PR.
 
